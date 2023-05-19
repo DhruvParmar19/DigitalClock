@@ -22,26 +22,23 @@ function currentTime(){
     document.getElementById('seconds').innerText = seconds;
     document.getElementById('session').innerText = session;
 
-    // randomImage();
+    if(session === 'AM' && hours <= 06){
+        document.getElementById('container').style.backgroundImage = "url('https://source.unsplash.com/1600x900/?midnight')";
+    }
+    else if(session === 'AM' && hours <= 12){
+        document.getElementById('container').style.backgroundImage = "url('https://source.unsplash.com/1600x900/?morning')";
+    }
+    else if(session === 'PM' && hours <= 6){
+        document.getElementById('container').style.backgroundImage = "url('https://source.unsplash.com/1600x900/?afternoon')";
+    }
+    else if(session === 'PM' && hours <= 7){
+        document.getElementById('container').style.backgroundImage = "url('https://source.unsplash.com/1600x900/?dusk')";
+    }
+    else if(session === 'PM' && hours <= 12){
+        document.getElementById('container').style.backgroundImage = "url('https://source.unsplash.com/1600x900/?night')";
+    }
     setInterval(currentTime, 1000);
 }
-
-// function randomImage(){
-//     if(session === 'PM' && hours > 09){
-//         document.getElementById('container').style.backgroundImage = "url('https://source.unsplash.com/1600x900/?"+'Night'+"')";
-//     }
-//     else if(session === 'AM' && hours < 06){
-//         document.getElementById('container').style.backgroundImage = "url('https://source.unsplash.com/1600x900/?"+'Midnight'+"')";
-//     }
-//     else if(session === 'AM' && hours < 12){
-//         document.getElementById('container').style.backgroundImage = "url('https://source.unsplash.com/1600x900/?"+'Morning'+"')";
-//     }
-//     else if(session === 'PM' && hours > 01){
-//         document.getElementById('container').style.backgroundImage = "url('https://source.unsplash.com/1600x900/?"+'noon'+"')";
-//     }
-//     else{
-//         document.getElementById('container').style.backgroundImage = "url('https://source.unsplash.com/1600x900/?"+'Midnight'+"')";
-// }}
 
 
 currentTime();
